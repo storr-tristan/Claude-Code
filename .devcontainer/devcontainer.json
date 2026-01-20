@@ -1,0 +1,37 @@
+{
+  "name": "HubSpot Metrics Dashboard",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:18",
+
+  // Forward ports automatically
+  "forwardPorts": [3000, 3001],
+
+  // Set port attributes
+  "portsAttributes": {
+    "3000": {
+      "label": "Frontend",
+      "onAutoForward": "notify"
+    },
+    "3001": {
+      "label": "Backend API",
+      "onAutoForward": "notify"
+    }
+  },
+
+  // Run commands after container is created
+  "postCreateCommand": "cd backend && npm install && cd ../frontend && npm install",
+
+  // Configure VS Code settings
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      }
+    }
+  }
+}
