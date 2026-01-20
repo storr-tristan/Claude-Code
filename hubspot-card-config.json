@@ -1,0 +1,24 @@
+{
+  "title": "Performance Metrics",
+  "description": "Fetch advertising performance metrics from Google, Meta, Microsoft, and Amazon Ads",
+  "fetch": {
+    "objectTypes": [
+      {
+        "name": "contacts",
+        "propertiesToSend": []
+      },
+      {
+        "name": "companies",
+        "propertiesToSend": []
+      },
+      {
+        "name": "deals",
+        "propertiesToSend": []
+      }
+    ],
+    "targetUrl": "https://YOUR_AZURE_APP_URL.azurewebsites.net"
+  },
+  "display": {
+    "properties": []
+  }
+}
