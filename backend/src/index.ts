@@ -2,8 +2,23 @@ import express from 'express';
 import cors from 'cors';
 import { config } from './config/index.js';
 import routes from './routes/index.js';
+import { initDatabase } from './services/database.js';
+import { initWorkflowHandlers } from './services/workflowService.js';
+
+// Initialize database
+initDatabase();
+
+// Initialize workflow card submission handlers
+initWorkflowHandlers();
 
 const app = express();
+
+// Raw body capture for Zoom webhook signature verification (must be before express.json())
+app.use('/api/zoom/webhook', express.json({
+  verify: (req: express.Request, _res: express.Response, buf: Buffer) => {
+    (req as express.Request & { rawBody?: string }).rawBody = buf.toString();
+  },
+}));
 
 // Middleware
 app.use(cors({

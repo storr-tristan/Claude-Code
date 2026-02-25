@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { getAccounts, getMetrics } from '../controllers/metricsController.js';
+import workflowRoutes from './workflowRoutes.js';
 
 const router = Router();
 
@@ -25,5 +26,8 @@ router.get('/health', (req, res) => {
     message: 'HubSpot Metrics API is running',
   });
 });
+
+// Workflow routes (Zoom webhook, Teams bot)
+router.use(workflowRoutes);
 
 export default router;
