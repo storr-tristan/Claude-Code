@@ -1,3 +1,5 @@
+export * from './workflow.js';
+
 export type Platform = 'google_ads' | 'meta_ads' | 'microsoft_ads' | 'amazon_ads';
 
 export interface Account {

@@ -34,4 +34,25 @@ export const config = {
     clientSecret: process.env.AMAZON_ADS_CLIENT_SECRET || '',
     refreshToken: process.env.AMAZON_ADS_REFRESH_TOKEN || '',
   },
+
+  zoom: {
+    accountId: process.env.ZOOM_ACCOUNT_ID || '',
+    clientId: process.env.ZOOM_CLIENT_ID || '',
+    clientSecret: process.env.ZOOM_CLIENT_SECRET || '',
+    webhookSecretToken: process.env.ZOOM_WEBHOOK_SECRET_TOKEN || '',
+  },
+
+  teams: {
+    botAppId: process.env.TEAMS_BOT_APP_ID || '',
+    botAppPassword: process.env.TEAMS_BOT_APP_PASSWORD || '',
+    botTenantId: process.env.TEAMS_BOT_TENANT_ID || '',
+  },
+
+  anthropic: {
+    apiKey: process.env.ANTHROPIC_API_KEY || '',
+  },
+
+  hubspot: {
+    accessToken: process.env.HUBSPOT_ACCESS_TOKEN || '',
+  },
 };
